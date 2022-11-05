@@ -22,8 +22,8 @@ if LooseVersion(pip.__version__) < LooseVersion("21.0.0"):
 requirements = {
     "install": [
         "wheel",
-        "torch>=1.9.0",
-        "torchaudio>=0.8.1",
+        # "torch>=1.9.0",
+        # "torchaudio>=0.8.1",
         "setuptools>=38.5.1",
         "librosa>=0.8.0",
         "soundfile>=0.10.2",
@@ -33,9 +33,9 @@ requirements = {
         "tqdm>=4.26.1",
         "h5py>=2.10.0",
         "pyworld>=0.2.12",
-        "sprocket-vc",
-        "protobuf<=3.19.0",
-        "hydra-core>=1.2",
+        # "sprocket-vc",
+        # "protobuf<=3.19.0",
+        # "hydra-core>=1.2",
     ],
     "setup": [
         "numpy",
