@@ -8,9 +8,9 @@ defaults:
   - data: vctk_24kHz
 
 hydra:
-  job:
-    chdir: false
-  output_subdir: null
+  # job:
+  #   chdir: false
+  # output_subdir: null
   job_logging:
     formatters:
       simple:
