@@ -9,9 +9,9 @@ from distutils.version import LooseVersion
 import pip
 from setuptools import find_packages, setup
 
-if LooseVersion(sys.version) < LooseVersion("3.8"):
+if LooseVersion(sys.version) < LooseVersion("3.7"):
     raise RuntimeError(
-        "usfgan requires Python>=3.8, " "but your Python is {}".format(sys.version)
+        "usfgan requires Python>=3.7, " "but your Python is {}".format(sys.version)
     )
 if LooseVersion(pip.__version__) < LooseVersion("21.0.0"):
     raise RuntimeError(
