@@ -514,7 +514,6 @@ class Trainer(object):
             self.save_checkpoint(
                 os.path.join(
                     self.config.out_dir,
-                    "checkpoints",
                     f"checkpoint-{self.steps}steps.pkl",
                 )
             )
@@ -848,7 +847,7 @@ def main(config: DictConfig) -> None:
     except KeyboardInterrupt:
         trainer.save_checkpoint(
             os.path.join(
-                config.out_dir, "checkpoints", f"checkpoint-{trainer.steps}steps.pkl"
+                config.out_dir, f"checkpoint-{trainer.steps}steps.pkl"
             )
         )
         logger.info(f"Successfully saved checkpoint @ {trainer.steps}steps.")
