@@ -684,6 +684,8 @@ def main(config: DictConfig) -> None:
     torch.cuda.manual_seed(config.seed)
     os.environ["PYTHONHASHSEED"] = str(config.seed)
 
+    config.out_dir =hydra.utils.to_absolute_path(config.out_dir)
+
     # check directory existence
     if not os.path.exists(config.out_dir):
         os.makedirs(config.out_dir)
