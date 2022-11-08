@@ -830,7 +830,7 @@ def main(config: DictConfig) -> None:
     # load trained parameters from checkpoint
     if config.train.resume:
         resume = os.path.join(
-            config.out_dir, "checkpoints", f"checkpoint-{config.train.resume}steps.pkl"
+            config.out_dir, f"checkpoint-{config.train.resume}steps.pkl"
         )
         if os.path.exists(resume):
             trainer.load_checkpoint(resume)
