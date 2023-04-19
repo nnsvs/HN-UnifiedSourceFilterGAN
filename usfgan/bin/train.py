@@ -39,6 +39,11 @@ matplotlib.use("Agg")
 logger = getLogger(__name__)
 
 
+def num_trainable_params(model):
+    parameters = filter(lambda p: p.requires_grad, model.parameters())
+    return sum([np.prod(p.size()) for p in parameters])
+
+
 class Trainer(object):
     """Customized trainer module for Unified Source-Filter GAN training."""
 
@@ -783,6 +788,14 @@ def main(config: DictConfig) -> None:
             device
         ),
     }
+
+    for name in model.keys():
+        logger.info(
+            f"[{name}] " + "Number of trainable params: {:.3f} million".format(
+                num_trainable_params(model[name]) / 1000000.0
+            )
+        )
+
     if config.train.lambda_feat_match > 0:
         criterion["feat_match"] = hydra.utils.instantiate(
             config.train.feat_match_loss
